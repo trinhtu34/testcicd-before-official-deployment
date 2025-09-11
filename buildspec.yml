@@ -30,7 +30,7 @@ phases:
       - echo Build completed on `date`
 
       - echo Writing imageDetail.json file...
-      - printf '{"imageUri":"%s", "BASE_SERVICE":"frontend-service" , "CONTAINER_NAME":"imgfrontend" , "TASK_FAMILY":"test-cicd-before-official-deployment"}' $REPOSITORY_URI:$COMMIT_HASH > imageDetail.json
+      - printf '{"imageUri":"%s","CONTAINER_NAME":"imgfrontend","TASK_FAMILY":"test-cicd-before-official-deployment", "BASE_SERVICE":"frontend-service", "RULE_ARN":"arn:aws:elasticloadbalancing:ap-southeast-1:183829413334:listener-rule/app/ws-alb/1b03a81f29538009/9c1209577d0fa296/9f3fb7be42fbccd1"}' $REPOSITORY_URI:$COMMIT_HASH > imageDetail.json
       - cat imageDetail.json
 artifacts:
   files:
